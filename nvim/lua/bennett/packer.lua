@@ -51,7 +51,19 @@ return require('packer').startup(function(use)
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' }, -- Required
-                { 'rafamadriz/friendly-snippets' }, -- Optional
-            }
+            { 'rafamadriz/friendly-snippets' }, -- Optional
         }
-    end)
+    }
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use { 'kdheepak/lazygit.nvim' }
+end)
